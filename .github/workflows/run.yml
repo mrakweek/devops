@@ -11,10 +11,10 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v2.4.0
 
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v2.3.0
         with:
           python-version: '3.x'
 
@@ -22,7 +22,7 @@ jobs:
         run: pip install pyinstaller
 
       - name: Build executable
-        run: pyinstaller your_script.py
+        run: pyinstaller main.py
 
       - name: Upload executable
         uses: actions/upload-artifact@v2
