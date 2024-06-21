@@ -1,31 +1,31 @@
 name: Build and Upload Executable
 
-   on:
-     push:
-       branches:
-         - main
+on:
+  push:
+    branches:
+      - main
 
-   jobs:
-     build:
-       runs-on: ubuntu-latest
+jobs:
+  build:
+    runs-on: ubuntu-latest
 
-       steps:
-         - name: Checkout code
-           uses: actions/checkout@v2
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-         - name: Set up Python
-           uses: actions/setup-python@v2
-           with:
-             python-version: '3.x'
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
 
-         - name: Install dependencies
-           run: pip install pyinstaller
+      - name: Install dependencies
+        run: pip install pyinstaller
 
-         - name: Build executable
-           run: pyinstaller your_script.py
+      - name: Build executable
+        run: pyinstaller your_script.py
 
-         - name: Upload executable
-           uses: actions/upload-artifact@v2
-           with:
-             name: executables
-             path: dist/your_script
+      - name: Upload executable
+        uses: actions/upload-artifact@v2
+        with:
+          name: executables
+          path: dist/your_script
