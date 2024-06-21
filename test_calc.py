@@ -6,3 +6,6 @@ def test_1():
 
 def test_2():
     assert summ(5, 5) == 10
+
+def test_2():
+    assert summ(5, 6) == 11
